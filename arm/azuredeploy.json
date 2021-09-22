@@ -269,7 +269,7 @@
         {
             "type": "Microsoft.ContainerService/managedClusters",
             "apiVersion": "2020-03-01",
-            "name": "[variables('kubernetesClusterName')]",
+            "name": "[variables('kubernetesClusterName')]", 
             "location": "[parameters('Location')]",
             "dependsOn": [
                 "[concat('Microsoft.Resources/deployments/', 'WorkspaceDeployment-fabmedical-', parameters('Suffix'))]"
