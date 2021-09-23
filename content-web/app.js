@@ -2,11 +2,13 @@ const express = require('express');
 const http = require('http');
 const path = require('path');
 const request = require('request');
-
+const appInsights = require("applicationinsights");
+appInsights.setup("be2a6e00-333d-43c1-94fb-1f0904d879bc");
+appInsights.start();
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'dist/content-web')));
-const contentApiUrl = process.env.CONTENT_API_URL || "http://localhost:3001";
+const contentApiUrl = process.env.CONTENT_API_URL || "http://20.71.107.203:3001";
 
 
 function getSessions(cb) {
